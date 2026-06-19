@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account Restricted - Action Required</title>
+<style>
+/* CSS Reset & General Setup */
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+background-color: #f8f9fa; /* Light grey background to make the white card pop */
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+padding: 20px;
+}
+
+/* Error Card Container */
+.error-container {
+background: #ffffff; /* White card body */
+max-width: 450px;
+width: 100%;
+padding: 40px 30px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(220, 53, 69, 0.08); /* Subtle red tint shadow */
+text-align: center;
+border: 2px solid #dc3545; /* Crisp Red Border */
+border-top: 8px solid #dc3545; /* Thick Red Accent Top */
+}
+
+/* Alert Icon Styling */
+.error-icon {
+width: 64px;
+height: 64px;
+background-color: #fdf2f2; /* Soft red tint */
+color: #dc3545; /* Alert Red */
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 20px auto;
+}
+
+.error-icon svg {
+width: 32px;
+height: 32px;
+}
+
+/* Typography */
+h2 {
+color: #1a202c;
+font-size: 24px;
+font-weight: 700;
+margin-bottom: 8px;
+}
+
+.error-subtitle {
+color: #dc3545; /* Alert Red */
+font-weight: 700;
+font-size: 14px;
+text-transform: uppercase;
+letter-spacing: 0.7px;
+margin-bottom: 20px;
+}
+
+/* Detailed Box explaining the debt */
+.error-details {
+background-color: #fdf2f2; /* Pure white background */
+border-left: 4px solid #dc3545; /* Thick Red Left Highlight */
+padding: 18px;
+text-align: left;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+
+.error-details p {
+color: #2d3748;
+font-size: 14px;
+line-height: 1.6;
+}
+
+.error-details strong {
+color: #dc3545; /* Strong highlight in red */
+}
+
+.action-instruction {
+font-size: 13px;
+color: #4a5568;
+font-weight: 500;
+margin-bottom: 15px;
+}
+
+/* Urgent Red Action Button */
+.btn-call {
+display: inline-block;
+width: 100%;
+background-color: #dc3545; /* Alert Red Button */
+color: #ffffff; /* White text */
+padding: 14px 24px;
+font-size: 16px;
+font-weight: 600;
+text-decoration: none;
+border-radius: 6px;
+transition: background-color 0.2s ease;
+margin-bottom: 20px;
+box-shadow: 0 4px 12px rgba(220, 53, 69, 0.2);
+}
+
+.btn-call:hover {
+background-color: #bd2130; /* Darker red on hover */
+}
+
+/* Technical Tracking Code */
+.error-code {
+display: block;
+color: #a0aec0;
+font-size: 11px;
+letter-spacing: 0.5px;
+}
+</style>
+</head>
+<body>
+
+<div class="error-container">
+<div class="error-icon">
+<!-- SVG Alert Circle Icon -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="12" y1="8" x2="12" y2="12"></line>
+<line x1="12" y1="16" x2="12.01" y2="16"></line>
+</svg>
+</div>
+
+<h2>Transactions Suspended</h2>
+<p class="error-subtitle">Account Balance Owed</p>
+
+<div class="error-details">
+<p>Your account is presently on hold due to an outstanding amount that must be cleared.<strong>Once you clear this money off in full, your account will be immediately restored</strong> so you can resume making standard transactions.</p>
+</div>
+
+<p class="action-instruction">Please call the bank directly to settle this balance:</p>
+
+<!-- Dynamic link template to place call on mobile devices -->
+<a href="tel:18005550199" class="btn-call">
+Call Bank & Settle Balance
+</a>
+
+<span class="error-code">Reference Code: ERR-BAL-OWED-04</span>
+</div>
+
+</body>
+</html>
+
