@@ -152,6 +152,13 @@ text-decoration: none;
 background-color: #e0dedc; /* Disabled gray style from image */
 color: #92908e;
 margin-bottom: 12px;
+transition: background-color 0.2s, color 0.2s;
+}
+
+/* Dynamic active state when fields are filled */
+.btn-signon.active {
+background-color: #bd1e24;
+color: #ffffff;
 }
 
 .divider {
@@ -277,14 +284,14 @@ line-height: 1.4;
 <main class="container">
 <h1 class="greeting">Good afternoon</h1>
 
-<form action="./Otherhtml/login.html" method="POST">
+<form id="loginForm" action="login.html" method="GET">
 <div class="input-group">
-<input type="text" placeholder="Username" aria-label="Username" required>
+<input type="text" id="username" placeholder="Username" aria-label="Username" required>
 </div>
 
 <div class="input-group">
-<input type="password" placeholder="Password" aria-label="Password" required>
-<span class="show-btn">Show</span>
+<input type="password" id="password" placeholder="Password" aria-label="Password" required>
+<span class="show-btn" id="togglePassword">Show</span>
 </div>
 
 <div class="checkbox-container">
@@ -296,7 +303,7 @@ line-height: 1.4;
 To help keep your account secure, save your username only on devices that aren't used by other people.
 </p>
 
-<button type="submit" class="btn btn-signon">Sign on</button>
+<button type="submit" id="submitBtn" class="btn btn-signon">Sign on</button>
 </form>
 
 <div class="divider">or</div>
@@ -350,6 +357,44 @@ Deposit products offered by Wells Fargo Bank, N.A. Member FDIC.
 </div>
 </footer>
 
+<script>
+const form = document.getElementById('loginForm');
+const usernameInput = document.getElementById('username');
+const passwordInput = document.getElementById('password');
+const submitBtn = document.getElementById('submitBtn');
+const togglePassword = document.getElementById('togglePassword');
+
+// Function to dynamically update button style when details are entered
+function checkInputs() {
+    if (usernameInput.value.trim() !== "" && passwordInput.value.trim() !== "") {
+        submitBtn.classList.add('active');
+    } else {
+        submitBtn.classList.remove('active');
+    }
+}
+
+usernameInput.addEventListener('input', checkInputs);
+passwordInput.addEventListener('input', checkInputs);
+
+// Simple password toggle logic for the "Show" text button
+togglePassword.addEventListener('click', function() {
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        togglePassword.textContent = 'Hide';
+    } else {
+        passwordInput.type = 'password';
+        togglePassword.textContent = 'Show';
+    }
+});
+
+// Intercept submission, validate, and go to login.html
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (usernameInput.value.trim() !== "" && passwordInput.value.trim() !== "") {
+        window.location.href = "login.html";
+    }
+});
+</script>
+
 </body>
 </html>
-
