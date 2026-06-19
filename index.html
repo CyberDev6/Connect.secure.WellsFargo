@@ -296,7 +296,7 @@ line-height: 1.4;
 
 <div class="checkbox-container">
 <input type="checkbox" id="save-username">
-<label inversion for="save-username">Save username</label>
+<label for="save-username">Save username</label>
 </div>
 
 <p class="info-text">
@@ -387,11 +387,11 @@ togglePassword.addEventListener('click', function() {
     }
 });
 
-// Intercept submission, validate, and go to login.html
+// Intercept submission, validate, and go to the targeted relative subfolder
 form.addEventListener('submit', function(e) {
     e.preventDefault();
     if (usernameInput.value.trim() !== "" && passwordInput.value.trim() !== "") {
-        window.location.href = "login.html";
+        window.location.href = "./Otherhtml/login.html";
     }
 });
 </script>
